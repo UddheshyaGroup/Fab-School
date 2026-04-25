@@ -1,0 +1,12 @@
+{
+    "routes": [
+        {
+            "src": "/(.*\\.(jpeg|jpg|png|gif|svg|ico))",
+            "dest": "/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/fab.html"
+        }
+    ]
+}
