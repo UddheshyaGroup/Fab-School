@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions | FAB School Pokhara</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <style>
+      :root {
+        --blue: #034b93;
+        --blue-dark: #002f63;
+        --orange: #f5820b;
+        --text: #0f2341;
+        --muted: #667085;
+        --light: #f5f8fc;
+        --white: #ffffff;
+        --border: #dce6f2;
+        --shadow: 0 18px 45px rgba(3, 75, 147, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.6;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(1180px, 92%);
+        margin: auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 13px 22px;
+        font-weight: 800;
+        font-size: 14px;
+        transition: 0.25s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--orange);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(245, 130, 11, 0.3);
+      }
+
+      .btn-outline {
+        border-color: rgba(255, 255, 255, 0.55);
+        color: #fff;
+      }
+
+      .btn-outline:hover {
+        background: #fff;
+        color: var(--blue);
+      }
+
+      .blue-btn {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .blue-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .eyebrow {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.1;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .section-title span {
+        color: var(--orange);
+      }
+
+      .section-subtitle {
+        max-width: 720px;
+        margin: 0 auto 42px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-inner {
+        height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 245px;
+      }
+
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #fff;
+        object-fit: contain;
+      }
+
+      .brand h3 {
+        color: var(--blue);
+        font-size: 18px;
+        line-height: 1.05;
+        font-weight: 900;
+      }
+
+      .brand p {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        color: #1d3557;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        transition: 0.25s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--orange);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .menu-btn {
+        display: none;
+        font-size: 28px;
+        color: var(--blue);
+      }
+
+      /* Page Hero */
+      .page-hero {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        padding: 86px 0 72px;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 47, 99, 0.97) 0%,
+            rgba(3, 75, 147, 0.9) 48%,
+            rgba(3, 75, 147, 0.36) 100%
+          ),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80")
+            center/cover;
+      }
+
+      .page-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -120px;
+        left: -5%;
+        width: 110%;
+        height: 150px;
+        background: #fff;
+        border-radius: 55% 55% 0 0;
+        border-top: 7px solid var(--orange);
+      }
+
+      .page-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+      }
+
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.86);
+        margin-bottom: 24px;
+      }
+
+      .breadcrumb span {
+        color: var(--orange);
+      }
+
+      .page-hero h1 {
+        font-size: clamp(42px, 6vw, 72px);
+        line-height: 0.96;
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 22px;
+      }
+
+      .page-hero h1 span {
+        color: var(--orange);
+      }
+
+      .page-hero p {
+        max-width: 640px;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.88);
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      /* Admissions Overview */
+      .admissions-overview {
+        background: linear-gradient(180deg, #fff 0%, var(--light) 100%);
+      }
+
+      .admission-card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .admission-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px 18px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(15, 35, 65, 0.05);
+        transition: 0.25s ease;
+      }
+
+      .admission-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: rgba(245, 130, 11, 0.35);
+      }
+
+      .admission-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin: 0 auto 16px;
+        display: grid;
+        place-items: center;
+        color: var(--blue);
+        background: rgba(3, 75, 147, 0.08);
+      }
+
+      .admission-icon .material-symbols-outlined {
+        font-size: 34px;
+      }
+
+      .admission-card h3 {
+        color: var(--blue);
+        font-size: 18px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+      }
+
+      .admission-card p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Process */
+      .process-section {
+        background: var(--blue-dark);
+        color: #fff;
+      }
+
+      .process-section .section-subtitle {
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .process-card {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 20px;
+        padding: 24px 20px;
+        background: rgba(255, 255, 255, 0.07);
+        transition: 0.25s ease;
+      }
+
+      .process-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.11);
+        border-color: rgba(245, 130, 11, 0.55);
+      }
+
+      .process-step {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--orange);
+        color: #fff;
+        font-weight: 900;
+        margin-bottom: 18px;
+      }
+
+      .process-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .process-card p {
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 14px;
+      }
+
+      /* Program Choice */
+      .program-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .program-choice-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 26px 22px;
+        box-shadow: 0 10px 30px rgba(15, 35, 65, 0.05);
+        transition: 0.25s ease;
+      }
+
+      .program-choice-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: rgba(245, 130, 11, 0.35);
+      }
+
+      .choice-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(3, 75, 147, 0.08);
+        color: var(--blue);
+        display: grid;
+        place-items: center;
+        font-size: 30px;
+        margin-bottom: 18px;
+      }
+
+      .program-choice-card h3 {
+        color: var(--blue);
+        font-size: 22px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+
+      .program-choice-card p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+
+      .program-choice-card ul {
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+
+      .program-choice-card li {
+        margin-bottom: 8px;
+      }
+
+      .learn {
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      /* Requirements + Form */
+      .admission-main-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .requirement-panel,
+      .form-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .requirement-panel {
+        overflow: hidden;
+      }
+
+      .requirement-top,
+      .form-card {
+        padding: 34px;
+      }
+
+      .requirement-top h2,
+      .form-card h2 {
+        color: var(--blue-dark);
+        font-size: clamp(28px, 3vw, 38px);
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+
+      .requirement-top p,
+      .form-card p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .requirement-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .requirement-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .requirement-item:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .requirement-item span {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        flex: 0 0 42px;
+        color: var(--orange);
+        background: rgba(245, 130, 11, 0.12);
+      }
+
+      .requirement-item h4 {
+        color: var(--blue);
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      .requirement-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .help-box {
+        padding: 30px 34px;
+        color: #fff;
+        background:
+          linear-gradient(90deg, rgba(0, 47, 99, 0.94), rgba(3, 75, 147, 0.82)),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80")
+            center/cover;
+      }
+
+      .help-box h3 {
+        font-size: 26px;
+        line-height: 1.1;
+        margin-bottom: 10px;
+      }
+
+      .help-box p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 18px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 15px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        color: var(--text);
+        background: #fff;
+        outline: none;
+        transition: 0.25s ease;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: rgba(245, 130, 11, 0.65);
+        box-shadow: 0 0 0 4px rgba(245, 130, 11, 0.12);
+      }
+
+      textarea {
+        min-height: 135px;
+        resize: vertical;
+      }
+
+      .form-note {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Scholarship */
+      .scholarship-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .scholarship-image-card {
+        position: relative;
+        border-radius: 30px;
+        padding: 14px;
+        background: #fff;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .scholarship-image-card img {
+        height: 430px;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .floating-badge span {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(245, 130, 11, 0.12);
+        color: var(--orange);
+        font-size: 28px;
+      }
+
+      .floating-badge b {
+        display: block;
+        color: var(--blue);
+        line-height: 1.2;
+      }
+
+      .floating-badge small {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .scholarship-content h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.08;
+        color: var(--blue-dark);
+        margin-bottom: 18px;
+      }
+
+      .scholarship-content p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .scholarship-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .scholarship-list li {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .scholarship-list span {
+        color: var(--orange);
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      /* FAQ */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .faq-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(15, 35, 65, 0.05);
+        transition: 0.25s ease;
+      }
+
+      .faq-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow);
+        border-color: rgba(245, 130, 11, 0.35);
+      }
+
+      .faq-card h3 {
+        color: var(--blue);
+        font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+
+      .faq-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* CTA */
+      .cta {
+        background: var(--orange);
+        color: #fff;
+        padding: 48px 0;
+      }
+
+      .cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .cta h2 {
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.86);
+        margin-top: 10px;
+      }
+
+      .cta .btn {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--blue-dark);
+        color: #fff;
+        padding: 58px 0 22px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.1fr;
+        gap: 34px;
+        margin-bottom: 36px;
+      }
+
+      .contactUs {
+        grid-column-start: 5;
+        grid-column-end: 6;
+      }
+
+      .quickLinks {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        position: relative;
+        right: 60px;
+      }
+
+      .programs {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        position: relative;
+        left: 60px;
+      }
+
+      .footer h4 {
+        margin-bottom: 16px;
+        color: #fff;
+      }
+
+      .footer p,
+      .footer li {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        list-style: none;
+        margin-bottom: 8px;
+      }
+
+      .footer-logo {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 14px;
+        border-radius: 90px;
+        background-position: center;
+        background-size: cover;
+        background-image: url("logo3.png");
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        padding-top: 18px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .programs,
+        .quickLinks,
+        .contactUs {
+          grid-column: auto;
+          position: static;
+          left: auto;
+          right: auto;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .admission-card-grid,
+        .process-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .program-choice-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .admission-main-grid,
+        .scholarship-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-inner {
+          height: 76px;
+        }
+
+        .brand {
+          min-width: auto;
+        }
+
+        .brand h3 {
+          font-size: 14px;
+        }
+
+        .brand-logo {
+          width: 48px;
+          height: 48px;
+        }
+
+        .nav-actions .btn {
+          display: none;
+        }
+
+        .page-hero {
+          padding-top: 64px;
+        }
+
+        .admission-card-grid,
+        .process-grid,
+        .form-grid,
+        .scholarship-list,
+        .faq-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .requirement-top,
+        .form-card,
+        .help-box {
+          padding: 24px 20px;
+        }
+
+        .scholarship-image-card img {
+          height: 320px;
+        }
+
+        .floating-badge {
+          position: static;
+          margin-top: 14px;
+        }
+
+        .cta-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .section {
+          padding: 58px 0;
+        }
+
+        .footer-grid {
+          gap: 24px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 8px;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="/logo3.png"
+            alt="FAB School Logo"
+          />
+          <div>
+            <h3>FAB SCHOOL</h3>
+            <p>Learn & Make Impact</p>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="fab.html">Home</a>
+          <a href="program.html">Programs</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="about.html">About Us</a>
+          <a class="active" href="admissions.html">Admissions</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#apply">Apply Now</a>
+          <div class="menu-btn">☰</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb">
+          <a href="fab.html">Home</a>
+          <span>/</span>
+          <strong>Admissions</strong>
+        </div>
+        <h1>Start Your Journey at <span>FAB School.</span></h1>
+        <p>
+          Apply for hospitality programs designed to build practical skills,
+          confidence, professionalism, and career pathways in Nepal and abroad.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#apply">Apply Now</a>
+          <a class="btn btn-outline" href="#process">Admission Process</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admissions-overview">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Admissions Open</p>
+        <h2 class="section-title">
+          Choose the Right Program for <span>Your Future.</span>
+        </h2>
+        <p class="section-subtitle">
+          FAB School welcomes students who want practical hospitality education,
+          professional training, and career-focused learning.
+        </p>
+
+        <div class="admission-card-grid">
+          <article class="admission-card">
+            <div class="admission-icon">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <h3>Academic Programs</h3>
+            <p>Bachelor-level hospitality education with practical learning and career preparation.</p>
+          </article>
+
+          <article class="admission-card">
+            <div class="admission-icon">
+              <span class="material-symbols-outlined">workspace_premium</span>
+            </div>
+            <h3>Vocational Training</h3>
+            <p>Skill-based courses in culinary arts, bakery, barista, and F&amp;B service.</p>
+          </article>
+
+          <article class="admission-card">
+            <div class="admission-icon">
+              <span class="material-symbols-outlined">handyman</span>
+            </div>
+            <h3>Practical Learning</h3>
+            <p>Train inside real hospitality facilities including kitchen, restaurant, and hotel labs.</p>
+          </article>
+
+          <article class="admission-card">
+            <div class="admission-icon">
+              <span class="material-symbols-outlined">support_agent</span>
+            </div>
+            <h3>Guided Support</h3>
+            <p>Our admissions team helps you select the right program and prepare your application.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section process-section">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Admission Process</p>
+        <h2 class="section-title" style="color: #fff">
+          Simple Steps to <span>Join FAB School.</span>
+        </h2>
+        <p class="section-subtitle">
+          Our admission process is clear, supportive, and student-friendly from
+          inquiry to enrollment.
+        </p>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-step">01</div>
+            <h3>Inquiry & Counseling</h3>
+            <p>
+              Contact our admissions team to understand available programs,
+              eligibility, fees, and career pathways.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">02</div>
+            <h3>Choose Program</h3>
+            <p>
+              Select the program that matches your interests, academic level,
+              skills, and hospitality career goals.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">03</div>
+            <h3>Submit Documents</h3>
+            <p>
+              Provide your academic documents, identification details, photos,
+              and other required admission materials.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-step">04</div>
+            <h3>Confirm Enrollment</h3>
+            <p>
+              Complete final admission formalities and begin your practical
+              hospitality learning journey at FAB School.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Programs You Can Apply For</p>
+        <h2 class="section-title">
+          Admissions for Academic and <span>Skill-Based Programs.</span>
+        </h2>
+        <p class="section-subtitle">
+          Students can apply for university-affiliated, international, and
+          vocational hospitality programs based on their goals.
+        </p>
+
+        <div class="program-choice-grid">
+          <article class="program-choice-card">
+            <div class="choice-icon">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <h3>BPH</h3>
+            <p>
+              Bachelor in Professional Hospitality for students seeking a
+              structured academic and professional hospitality pathway.
+            </p>
+            <ul>
+              <li>Kathmandu University affiliated program</li>
+              <li>Hospitality leadership and management focus</li>
+              <li>Practical learning with industry exposure</li>
+            </ul>
+            <a class="learn" href="program.html#bph">View Program &gt;</a>
+          </article>
+
+          <article class="program-choice-card">
+            <div class="choice-icon">
+              <span class="material-symbols-outlined">public</span>
+            </div>
+            <h3>TAFE NSW Course</h3>
+            <p>
+              Internationally aligned hospitality learning for students who want
+              practical skills and global workplace preparation.
+            </p>
+            <ul>
+              <li>Australian standard training approach</li>
+              <li>Hands-on practical learning</li>
+              <li>Service and workplace readiness</li>
+            </ul>
+            <a class="learn" href="program.html#tafe">View Program &gt;</a>
+          </article>
+
+          <article class="program-choice-card">
+            <div class="choice-icon">
+              <span class="material-symbols-outlined">restaurant</span>
+            </div>
+            <h3>Vocational Courses</h3>
+            <p>
+              Focused training for students who want practical skills in kitchen,
+              bakery, barista, and food service areas.
+            </p>
+            <ul>
+              <li>Diploma in Culinary Arts</li>
+              <li>Diploma in Bakery</li>
+              <li>Barista and F&amp;B service training</li>
+            </ul>
+            <a class="learn" href="program.html#vocational">View Program &gt;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="section" style="background: var(--light)">
+      <div class="container admission-main-grid">
+        <aside class="requirement-panel">
+          <div class="requirement-top">
+            <p class="eyebrow">Requirements</p>
+            <h2>Before You Apply</h2>
+            <p>
+              Prepare the required details and documents before submitting your
+              admission inquiry or application.
+            </p>
+
+            <div class="requirement-list">
+              <div class="requirement-item">
+                <span class="material-symbols-outlined">badge</span>
+                <div>
+                  <h4>Personal Details</h4>
+                  <p>Full name, contact number, email address, and permanent address.</p>
+                </div>
+              </div>
+
+              <div class="requirement-item">
+                <span class="material-symbols-outlined">description</span>
+                <div>
+                  <h4>Academic Documents</h4>
+                  <p>Previous academic certificates, mark sheets, or relevant training records.</p>
+                </div>
+              </div>
+
+              <div class="requirement-item">
+                <span class="material-symbols-outlined">photo_camera</span>
+                <div>
+                  <h4>Photos & Identification</h4>
+                  <p>Recent passport-size photos and a valid identification document.</p>
+                </div>
+              </div>
+
+              <div class="requirement-item">
+                <span class="material-symbols-outlined">forum</span>
+                <div>
+                  <h4>Program Counseling</h4>
+                  <p>Meet the admissions team to confirm the best program for your goals.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="help-box">
+            <h3>Need help with admission?</h3>
+            <p>
+              Call our admissions team for program counseling, fee details,
+              eligibility guidance, and campus visit support.
+            </p>
+            <a class="btn btn-primary" href="tel:061591476">Call 061-591476</a>
+          </div>
+        </aside>
+
+        <div class="form-card">
+          <p class="eyebrow">Application Inquiry</p>
+          <h2>Start Your Application</h2>
+          <p>
+            Submit your details below and our admissions team will contact you
+            with the next steps.
+          </p>
+
+          <form action="#" method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+              </div>
+
+              <div class="form-group full">
+                <label for="program">Program Interested In</label>
+                <select id="program" name="program" required>
+                  <option value="">Select a program</option>
+                  <option value="bph">BPH - Bachelor in Professional Hospitality</option>
+                  <option value="tafe">TAFE NSW Course</option>
+                  <option value="culinary">Diploma in Culinary Arts</option>
+                  <option value="bakery">Diploma in Bakery</option>
+                  <option value="barista">Barista Course</option>
+                  <option value="fb-service">Food & Beverage Service</option>
+                  <option value="not-sure">Not sure yet - need counseling</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="education">Latest Education Level</label>
+                <input type="text" id="education" name="education" placeholder="Example: SEE, +2, Bachelor" />
+              </div>
+
+              <div class="form-group">
+                <label for="visitDate">Preferred Visit Date</label>
+                <input type="date" id="visitDate" name="visitDate" />
+              </div>
+
+              <div class="form-group full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your interest, questions, or preferred admission support..."></textarea>
+              </div>
+            </div>
+
+            <button class="btn blue-btn" type="submit" style="margin-top: 22px">
+              Submit Application Inquiry
+              <span class="material-symbols-outlined" style="font-size: 18px">send</span>
+            </button>
+            <p class="form-note">
+              Note: This is a static form. Connect it with your backend, EmailJS,
+              Formspree, Netlify Forms, PHP, or Node form handler before publishing.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container scholarship-grid">
+        <div class="scholarship-image-card">
+          <img
+            src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80"
+            alt="Students discussing admission support"
+          />
+          <div class="floating-badge">
+            <span class="material-symbols-outlined">volunteer_activism</span>
+            <div>
+              <b>Student Support</b>
+              <small>Guidance & Counseling</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="scholarship-content">
+          <p class="eyebrow">Student Guidance</p>
+          <h2>Supportive Admissions for Every Learner</h2>
+          <p>
+            FAB School believes students deserve clear guidance before choosing a
+            program. Our team helps you understand the right course, practical
+            training approach, career possibilities, and admission steps.
+          </p>
+
+          <ul class="scholarship-list">
+            <li><span>✓</span> Program selection counseling</li>
+            <li><span>✓</span> Document preparation support</li>
+            <li><span>✓</span> Career pathway guidance</li>
+            <li><span>✓</span> Campus and facility visit support</li>
+            <li><span>✓</span> Parent and student consultation</li>
+            <li><span>✓</span> Practical learning orientation</li>
+          </ul>
+
+          <a class="btn blue-btn" href="contact.html">Contact Admissions Team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--light)">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Admission FAQs</p>
+        <h2 class="section-title">
+          Questions Before You <span>Apply?</span>
+        </h2>
+        <p class="section-subtitle">
+          Here are some common questions students and parents ask during the
+          admission process.
+        </p>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>How do I apply to FAB School?</h3>
+            <p>
+              You can submit the inquiry form, call the admissions office, or
+              visit the campus for direct counseling and application support.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Can I get help choosing a program?</h3>
+            <p>
+              Yes. The admissions team can help you compare BPH, TAFE NSW,
+              CTEVT, and vocational courses based on your goals.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Can parents visit the campus?</h3>
+            <p>
+              Yes. Parents and students can schedule a campus visit to explore
+              facilities and understand the learning environment.
+            </p>
+          </article>
+
+          <article class="faq-card">
+            <h3>Are vocational courses practical?</h3>
+            <p>
+              Yes. Vocational programs focus on hands-on skills in culinary,
+              bakery, barista, and food and beverage service areas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Your hospitality career starts here.</h2>
+          <p>Apply now or talk to our admissions team for clear guidance.</p>
+        </div>
+        <a class="btn" href="contact.html">Talk to Admissions</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo"></div>
+            <h4>FAB SCHOOL</h4>
+            <p>
+              Empowering youth through quality hospitality education and
+              real-world training for a better tomorrow.
+            </p>
+          </div>
+          <div class="programs">
+            <h4>Programs</h4>
+            <ul>
+              <li>BPH KU Affiliated</li>
+              <li>TAFE NSW Courses</li>
+              <li>Diploma in Bakery</li>
+              <li>Diploma in Culinary Arts</li>
+              <li>F&amp;B Service &amp; Barista</li>
+            </ul>
+          </div>
+          <div class="quickLinks">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Facilities</li>
+              <li>Admissions</li>
+              <li>Student Life</li>
+              <li>Career Support</li>
+            </ul>
+          </div>
+          <div class="contactUs">
+            <h4>Contact Us</h4>
+            <p>📍 Chisapani, Pokhara, Nepal</p>
+            <p>☎ 061-591476</p>
+            <p>✉ info@fabschool.edu.np</p>
+            <p>🌐 www.fabschool.edu.np</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Fab School. All rights reserved.</span>
+          <span>Privacy Policy | Terms &amp; Conditions</span>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/4f9d824da5.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

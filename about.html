@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | FAB School Pokhara</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <style>
+      :root {
+        --blue: #034b93;
+        --blue-dark: #002f63;
+        --orange: #f5820b;
+        --text: #0f2341;
+        --muted: #667085;
+        --light: #f5f8fc;
+        --white: #ffffff;
+        --border: #dce6f2;
+        --shadow: 0 18px 45px rgba(3, 75, 147, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.6;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(1180px, 92%);
+        margin: auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 13px 22px;
+        font-weight: 800;
+        font-size: 14px;
+        transition: 0.25s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--orange);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(245, 130, 11, 0.3);
+      }
+
+      .btn-outline {
+        border-color: rgba(255, 255, 255, 0.55);
+        color: #fff;
+      }
+
+      .btn-outline:hover {
+        background: #fff;
+        color: var(--blue);
+      }
+
+      .blue-btn {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .blue-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .eyebrow {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.1;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .section-title span {
+        color: var(--orange);
+      }
+
+      .section-subtitle {
+        max-width: 720px;
+        margin: 0 auto 42px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-inner {
+        height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 245px;
+      }
+
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #fff;
+        object-fit: contain;
+      }
+
+      .brand h3 {
+        color: var(--blue);
+        font-size: 18px;
+        line-height: 1.05;
+        font-weight: 900;
+      }
+
+      .brand p {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 3px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        color: #1d3557;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        transition: 0.25s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--orange);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .menu-btn {
+        display: none;
+        font-size: 28px;
+        color: var(--blue);
+      }
+
+      /* Page Hero */
+      .page-hero {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        padding: 86px 0 72px;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 47, 99, 0.97) 0%,
+            rgba(3, 75, 147, 0.9) 48%,
+            rgba(3, 75, 147, 0.36) 100%
+          ),
+          url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80")
+            center/cover;
+      }
+
+      .page-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -120px;
+        left: -5%;
+        width: 110%;
+        height: 150px;
+        background: #fff;
+        border-radius: 55% 55% 0 0;
+        border-top: 7px solid var(--orange);
+      }
+
+      .page-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+      }
+
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.86);
+        margin-bottom: 24px;
+      }
+
+      .breadcrumb span {
+        color: var(--orange);
+      }
+
+      .page-hero h1 {
+        font-size: clamp(42px, 6vw, 72px);
+        line-height: 0.96;
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 22px;
+      }
+
+      .page-hero h1 span {
+        color: var(--orange);
+      }
+
+      .page-hero p {
+        max-width: 640px;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.88);
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      /* About Intro */
+      .about-intro {
+        background: linear-gradient(180deg, #fff 0%, var(--light) 100%);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .image-mosaic {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .image-mosaic img {
+        height: 210px;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .mosaic-badge {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #fff;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: var(--blue);
+        box-shadow: var(--shadow);
+        border: 7px solid rgba(245, 130, 11, 0.16);
+      }
+
+      .mosaic-badge strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1;
+        color: var(--orange);
+      }
+
+      .mosaic-badge span {
+        display: block;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .about-content h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.08;
+        color: var(--blue-dark);
+        margin-bottom: 18px;
+      }
+
+      .about-content p {
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .mini-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin: 28px 0;
+      }
+
+      .mini-feature {
+        border-left: 3px solid var(--orange);
+        padding-left: 14px;
+      }
+
+      .mini-feature h4 {
+        color: var(--blue);
+        font-size: 15px;
+      }
+
+      .mini-feature p {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+
+      /* Mission Vision */
+      .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .mission-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px 24px;
+        box-shadow: 0 10px 30px rgba(15, 35, 65, 0.05);
+        transition: 0.25s ease;
+      }
+
+      .mission-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: rgba(245, 130, 11, 0.35);
+      }
+
+      .mission-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background: rgba(3, 75, 147, 0.08);
+        color: var(--blue);
+        display: grid;
+        place-items: center;
+        margin-bottom: 18px;
+      }
+
+      .mission-icon .material-symbols-outlined {
+        font-size: 34px;
+      }
+
+      .mission-card h3 {
+        color: var(--blue);
+        font-size: 22px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+
+      .mission-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Empowerment Section */
+      .em-section {
+        background: linear-gradient(180deg, #fffaf4 0%, #fff 100%);
+      }
+
+      .em-container {
+        width: min(1560px, 100%);
+        background: #f8f1e7;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(3, 75, 147, 0.08);
+      }
+
+      .em-top {
+        display: grid;
+        grid-template-columns: 1.1fr 1.8fr 1.05fr;
+        align-items: stretch;
+      }
+
+      .em-edu {
+        padding: 30px 34px 26px 38px;
+      }
+
+      .em-kicker {
+        color: #ff8a00;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 2.7px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      .em-edu h2 {
+        max-width: 430px;
+        color: #004f9e;
+        font-size: clamp(30px, 3vw, 42px);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        margin-bottom: 2px;
+      }
+
+      .heading-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+      }
+
+      .em-border {
+        width: 20%;
+        height: 3px;
+        border-radius: 6px;
+        background: #f5820b;
+      }
+
+      .em-edu p:last-child {
+        max-width: 410px;
+        color: #004f9e;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .em-cards {
+        display: grid;
+        padding: 46px 0;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .em-card {
+        padding: 30px 20px 24px;
+        text-align: center;
+        border-left: 2px solid rgba(141, 153, 174, 0.28);
+      }
+
+      .em-card:first-child {
+        border-left: 0;
+      }
+
+      .em-icon {
+        margin: 8px auto;
+        color: #004f9e;
+      }
+
+      .em-icon .material-symbols-outlined {
+        font-size: 48px;
+      }
+
+      .em-card h3 {
+        color: #004f9e;
+        font-size: 18px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+      }
+
+      .em-card p {
+        color: #004f9e;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .em-image {
+        min-height: 286px;
+        position: relative;
+        background:
+          linear-gradient(
+            to right,
+            rgb(254, 244, 226) 0%,
+            rgba(248, 241, 231, 0.6) 25%,
+            rgba(248, 241, 231, 0) 60%
+          ),
+          url("/bg3.jpeg") left center / cover;
+      }
+
+      .em-image::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(248, 241, 231, 0) 0%,
+          rgba(248, 241, 231, 0.06) 16%,
+          rgba(8, 25, 56, 0.16) 100%
+        );
+      }
+
+      /* Why Choose */
+      .choose-section {
+        background: var(--blue-dark);
+        color: #fff;
+      }
+
+      .choose-section .section-subtitle {
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .choose-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .choose-card {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 20px;
+        padding: 24px 20px;
+        background: rgba(255, 255, 255, 0.07);
+        transition: 0.25s ease;
+      }
+
+      .choose-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.11);
+        border-color: rgba(245, 130, 11, 0.55);
+      }
+
+      .choose-step {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--orange);
+        color: #fff;
+        font-weight: 900;
+        margin-bottom: 18px;
+      }
+
+      .choose-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .choose-card p {
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 14px;
+      }
+
+      /* Teaching Hotel */
+      .hotel-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .hotel-image-card {
+        position: relative;
+        border-radius: 30px;
+        padding: 14px;
+        background: #fff;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .hotel-image-card img {
+        height: 470px;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .floating-badge span {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(245, 130, 11, 0.12);
+        color: var(--orange);
+        font-size: 28px;
+      }
+
+      .floating-badge b {
+        display: block;
+        color: var(--blue);
+        line-height: 1.2;
+      }
+
+      .floating-badge small {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .hotel-content h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.08;
+        color: var(--blue-dark);
+        margin-bottom: 18px;
+      }
+
+      .hotel-content p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .hotel-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .hotel-list li {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .hotel-list span {
+        color: var(--orange);
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      /* Affiliations */
+      .affiliations {
+        background: var(--light);
+        padding: 55px 0;
+      }
+
+      .logo-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        align-items: center;
+        margin-top: 25px;
+      }
+
+      .logo-box {
+        background: #fff;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 18px;
+        font-weight: 900;
+        color: var(--blue);
+        text-align: center;
+      }
+
+      .logo-box img {
+        max-height: 82px;
+        width: auto;
+      }
+
+      /* CTA */
+      .cta {
+        background: var(--orange);
+        color: #fff;
+        padding: 48px 0;
+      }
+
+      .cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .cta h2 {
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1;
+      }
+
+      .cta p {
+        color: rgba(255, 255, 255, 0.86);
+        margin-top: 10px;
+      }
+
+      .cta .btn {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--blue-dark);
+        color: #fff;
+        padding: 58px 0 22px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.1fr;
+        gap: 34px;
+        margin-bottom: 36px;
+      }
+
+      .contactUs {
+        grid-column-start: 5;
+        grid-column-end: 6;
+      }
+
+      .quickLinks {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        position: relative;
+        right: 60px;
+      }
+
+      .programs {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        position: relative;
+        left: 60px;
+      }
+
+      .footer h4 {
+        margin-bottom: 16px;
+        color: #fff;
+      }
+
+      .footer p,
+      .footer li {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        list-style: none;
+        margin-bottom: 8px;
+      }
+
+      .footer-logo {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 14px;
+        border-radius: 90px;
+        background-position: center;
+        background-size: cover;
+        background-image: url("logo3.png");
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        padding-top: 18px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .programs,
+        .quickLinks,
+        .contactUs {
+          grid-column: auto;
+          position: static;
+          left: auto;
+          right: auto;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .about-grid,
+        .hotel-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mission-grid,
+        .choose-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .logo-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 880px) {
+        .em-top {
+          grid-template-columns: 1fr;
+        }
+
+        .em-cards {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 20px 0 34px;
+        }
+
+        .em-card:nth-child(3) {
+          border-left: 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-inner {
+          height: 76px;
+        }
+
+        .brand {
+          min-width: auto;
+        }
+
+        .brand h3 {
+          font-size: 14px;
+        }
+
+        .brand-logo {
+          width: 48px;
+          height: 48px;
+        }
+
+        .nav-actions .btn {
+          display: none;
+        }
+
+        .page-hero {
+          padding-top: 64px;
+        }
+
+        .image-mosaic,
+        .mini-features,
+        .mission-grid,
+        .choose-grid,
+        .hotel-list,
+        .logo-row,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .image-mosaic img {
+          height: 220px;
+        }
+
+        .mosaic-badge {
+          position: static;
+          transform: none;
+          width: 100%;
+          height: auto;
+          border-radius: 18px;
+          padding: 18px;
+          margin-top: 12px;
+        }
+
+        .hotel-image-card img {
+          height: 320px;
+        }
+
+        .floating-badge {
+          position: static;
+          margin-top: 14px;
+        }
+
+        .cta-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .section {
+          padding: 58px 0;
+        }
+
+        .em-section {
+          padding: 12px 0 22px;
+        }
+
+        .em-container {
+          width: min(96%, 100%);
+          border-radius: 20px;
+        }
+
+        .em-edu {
+          padding: 24px 20px 18px;
+        }
+
+        .em-edu p:last-child {
+          max-width: none;
+        }
+
+        .em-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .em-card {
+          border-left: 0;
+          border-top: 1px solid rgba(141, 153, 174, 0.18);
+          padding: 22px 18px 20px;
+        }
+
+        .em-card:first-child {
+          border-top: 0;
+        }
+
+        .footer-grid {
+          gap: 24px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 8px;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="/logo3.png"
+            alt="FAB School Logo"
+          />
+          <div>
+            <h3>FAB SCHOOL</h3>
+            <p>Learn & Make Impact</p>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="fab.html">Home</a>
+          <a href="program.html">Programs</a>
+          <a href="facilities.html">Facilities</a>
+          <a class="active" href="about.html">About Us</a>
+          <a href="#admissions">Admissions</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#admissions">Apply Now</a>
+          <div class="menu-btn">☰</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb">
+          <a href="fab.html">Home</a>
+          <span>/</span>
+          <strong>About Us</strong>
+        </div>
+        <h1>Empowering Students for <span>Real-World Careers.</span></h1>
+        <p>
+          FAB School is a practical hospitality education institution in
+          Pokhara, helping students learn, grow, and prepare for meaningful
+          careers in Nepal and abroad.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#about-intro">Discover FAB School</a>
+          <a class="btn btn-outline" href="#admissions">Join FAB School</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-intro" class="section about-intro">
+      <div class="container about-grid">
+        <div class="image-mosaic">
+          <img
+            src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80"
+            alt="Students learning inside a training kitchen"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=80"
+            alt="Restaurant training environment"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80"
+            alt="Barista and beverage learning"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80"
+            alt="Hotel room training environment"
+          />
+          <div class="mosaic-badge">
+            <div>
+              <strong>FAB</strong>
+              <span>Learn & Make Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow">Who We Are</p>
+          <h2>Hospitality Education with Purpose, Practice, and Possibility.</h2>
+          <p>
+            FAB School provides industry-focused hospitality education through a
+            practical learning approach. Our students learn beyond classrooms by
+            training in professional facilities, working with mentors, and
+            developing the confidence needed for hospitality careers.
+          </p>
+          <p>
+            We believe education should be accessible, skill-based, and connected
+            to real opportunities. FAB School supports students from diverse
+            backgrounds and helps them build a future through quality education,
+            discipline, teamwork, and hands-on experience.
+          </p>
+
+          <div class="mini-features">
+            <div class="mini-feature">
+              <h4>Practical Learning</h4>
+              <p>Real training in hospitality spaces.</p>
+            </div>
+            <div class="mini-feature">
+              <h4>Career Focus</h4>
+              <p>Skills for jobs and internships.</p>
+            </div>
+            <div class="mini-feature">
+              <h4>Inclusive Growth</h4>
+              <p>Supportive environment for all.</p>
+            </div>
+          </div>
+
+          <a class="btn blue-btn" href="program.html">Explore Our Programs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Our Foundation</p>
+        <h2 class="section-title">
+          Built on <span>Learning, Skills, and Opportunity.</span>
+        </h2>
+        <p class="section-subtitle">
+          FAB School combines academic learning, practical hospitality training,
+          and student-centered guidance to prepare confident future
+          professionals.
+        </p>
+
+        <div class="mission-grid">
+          <article class="mission-card">
+            <div class="mission-icon">
+              <span class="material-symbols-outlined">flag</span>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To provide quality hospitality education that develops practical
+              skills, professional discipline, confidence, and career readiness
+              among young learners.
+            </p>
+          </article>
+
+          <article class="mission-card">
+            <div class="mission-icon">
+              <span class="material-symbols-outlined">visibility</span>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To become a trusted hospitality education center that connects
+              students with real-world learning, global standards, and meaningful
+              career pathways.
+            </p>
+          </article>
+
+          <article class="mission-card">
+            <div class="mission-icon">
+              <span class="material-symbols-outlined">workspace_premium</span>
+            </div>
+            <h3>Our Promise</h3>
+            <p>
+              To create a supportive, inclusive, and practice-based learning
+              environment where every student receives guidance to grow and
+              succeed.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="em-section">
+      <div class="em-container">
+        <div class="em-top">
+          <div class="em-edu">
+            <p class="em-kicker">Education that empowers</p>
+            <div class="heading-wrap">
+              <h2>We believe everyone deserves a chance to shine.</h2>
+              <div class="em-border"></div>
+            </div>
+            <p>
+              We create an inclusive and supportive environment where students
+              from all backgrounds learn, grow, and achieve their dreams
+              together.
+            </p>
+          </div>
+
+          <div class="em-cards">
+            <div class="em-card">
+              <div class="em-icon">
+                <span class="material-symbols-outlined">balance</span>
+              </div>
+              <h3>Equal Opportunity</h3>
+              <p>Everyone has the right to learn and succeed.</p>
+            </div>
+            <div class="em-card">
+              <div class="em-icon">
+                <span class="material-symbols-outlined">diversity_3</span>
+              </div>
+              <h3>Diverse Community</h3>
+              <p>Students from different backgrounds learn together.</p>
+            </div>
+            <div class="em-card">
+              <div class="em-icon">
+                <span class="material-symbols-outlined">psychiatry</span>
+              </div>
+              <h3>Supportive Learning</h3>
+              <p>Personal guidance every step of the way.</p>
+            </div>
+            <div class="em-card">
+              <div class="em-icon">
+                <span class="material-symbols-outlined">partner_heart</span>
+              </div>
+              <h3>Stronger Together</h3>
+              <p>We uplift each other and build a better tomorrow.</p>
+            </div>
+          </div>
+
+          <div class="em-image" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section choose-section">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Why FAB School</p>
+        <h2 class="section-title" style="color: #fff">
+          A Learning Culture That Builds <span>Confidence.</span>
+        </h2>
+        <p class="section-subtitle">
+          We focus on practical exposure, discipline, guidance, and industry
+          connection so students are prepared for real hospitality workplaces.
+        </p>
+
+        <div class="choose-grid">
+          <article class="choose-card">
+            <div class="choose-step">01</div>
+            <h3>Hands-on Training</h3>
+            <p>
+              Students practice inside real hospitality facilities including
+              kitchen, bakery, barista, restaurant, and hotel room labs.
+            </p>
+          </article>
+          <article class="choose-card">
+            <div class="choose-step">02</div>
+            <h3>Industry Mindset</h3>
+            <p>
+              Learning is connected to workplace behavior, service standards,
+              communication, hygiene, and professionalism.
+            </p>
+          </article>
+          <article class="choose-card">
+            <div class="choose-step">03</div>
+            <h3>Guided Support</h3>
+            <p>
+              Students receive academic and personal guidance to help them grow
+              with confidence throughout their learning journey.
+            </p>
+          </article>
+          <article class="choose-card">
+            <div class="choose-step">04</div>
+            <h3>Career Pathway</h3>
+            <p>
+              FAB School supports students with practical skills, internships,
+              job readiness, and future hospitality career opportunities.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container hotel-grid">
+        <div class="hotel-content">
+          <p class="eyebrow">Our Teaching Hotel</p>
+          <h2>Learn Inside a Real Hotel Environment</h2>
+          <p>
+            At FAB School, learning happens beyond classrooms. Students train in
+            a hospitality environment where each facility supports practical
+            learning, real service behavior, and workplace discipline.
+          </p>
+
+          <ul class="hotel-list">
+            <li><span>✓</span> Training kitchen and culinary practice</li>
+            <li><span>✓</span> Bakery, barista, and production labs</li>
+            <li><span>✓</span> Restaurant and guest service training</li>
+            <li><span>✓</span> Housekeeping and guest room practice</li>
+            <li><span>✓</span> Real teamwork and communication skills</li>
+            <li><span>✓</span> Practical career-focused learning</li>
+          </ul>
+
+          <a class="btn blue-btn" href="facilities.html">Explore Our Facilities</a>
+        </div>
+
+        <div class="hotel-image-card">
+          <img
+            src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=900&q=80"
+            alt="Hospitality learning environment"
+          />
+          <div class="floating-badge">
+            <span class="material-symbols-outlined">hotel</span>
+            <div>
+              <b>Teaching Hotel</b>
+              <small>Real Learning Environment</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="affiliations">
+      <div class="container">
+        <p class="eyebrow" style="text-align: center">Our Affiliations</p>
+        <h2 class="section-title" style="font-size: 34px">
+          Recognized. Affiliated. Industry-Aligned.
+        </h2>
+        <div class="logo-row">
+          <div class="logo-box">
+            <img src="/logo3-removebg.png" alt="FAB School" />
+          </div>
+          <div class="logo-box">
+            <img src="KU.png" alt="Kathmandu University" />
+          </div>
+          <div class="logo-box">
+            <img src="logo2.jpeg" alt="TAFE NSW" height="30" />
+          </div>
+          <div class="logo-box">
+            <img src="CTEVT.png" alt="CTEVT" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to become part of FAB School?</h2>
+          <p>Start your hospitality journey with practical learning and career-focused guidance.</p>
+        </div>
+        <a class="btn" href="#contact">Contact Admissions</a>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo"></div>
+            <h4>FAB SCHOOL</h4>
+            <p>
+              Empowering youth through quality hospitality education and
+              real-world training for a better tomorrow.
+            </p>
+          </div>
+          <div class="programs">
+            <h4>Programs</h4>
+            <ul>
+              <li>BPH KU Affiliated</li>
+              <li>TAFE NSW Courses</li>
+              <li>Diploma in Bakery</li>
+              <li>Diploma in Culinary Arts</li>
+              <li>F&amp;B Service &amp; Barista</li>
+            </ul>
+          </div>
+          <div class="quickLinks">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Facilities</li>
+              <li>Admissions</li>
+              <li>Student Life</li>
+              <li>Career Support</li>
+            </ul>
+          </div>
+          <div class="contactUs">
+            <h4>Contact Us</h4>
+            <p>📍 Chisapani, Pokhara, Nepal</p>
+            <p>☎ 061-591476</p>
+            <p>✉ info@fabschool.edu.np</p>
+            <p>🌐 www.fabschool.edu.np</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Fab School. All rights reserved.</span>
+          <span>Privacy Policy | Terms &amp; Conditions</span>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/4f9d824da5.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
