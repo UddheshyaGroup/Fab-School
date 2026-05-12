@@ -1,8 +1,60 @@
 {
+  "redirects": [
+    {
+      "source": "/fab.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/program.html",
+      "destination": "/program",
+      "permanent": true
+    },
+    {
+      "source": "/facilities.html",
+      "destination": "/facilities",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/admissions.html",
+      "destination": "/admissions",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
       "destination": "/fab.html"
+    },
+    {
+      "source": "/program",
+      "destination": "/program.html"
+    },
+    {
+      "source": "/facilities",
+      "destination": "/facilities.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/admissions",
+      "destination": "/admissions.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
     }
   ]
 }
