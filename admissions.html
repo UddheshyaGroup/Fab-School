@@ -736,31 +736,204 @@
 
     /* CTA */
     .cta {
-      background: var(--orange);
+      position: relative;
+      overflow: hidden;
       color: #fff;
-      padding: 48px 0;
+      padding: 68px 0;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 88% 80%, rgba(255, 255, 255, 0.14), transparent 26%),
+        linear-gradient(135deg, var(--orange) 0%, #f7941d 38%, var(--blue) 100%);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -90px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 34px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      left: -80px;
+      bottom: -110px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(0, 47, 99, 0.18);
     }
 
     .cta-inner {
-      display: flex;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 34px;
+    }
+
+    .cta-content {
+      max-width: 760px;
+    }
+
+    .cta-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cta-label .material-symbols-outlined {
+      font-size: 18px;
+      color: #fff;
     }
 
     .cta h2 {
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1;
+      max-width: 720px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -1.5px;
+      font-weight: 900;
+      margin-bottom: 16px;
     }
 
     .cta p {
-      color: rgba(255, 255, 255, 0.86);
-      margin-top: 10px;
+      max-width: 660px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      margin-top: 0;
     }
 
-    .cta .btn {
-      background: var(--blue);
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .cta .cta-main-btn {
+      background: var(--blue-dark);
       color: #fff;
+      box-shadow: 0 16px 34px rgba(0, 47, 99, 0.28);
+    }
+
+    .cta .cta-main-btn:hover {
+      transform: translateY(-3px);
+      background: #fff;
+      color: var(--blue);
+    }
+
+    .cta .cta-main-btn .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    .cta-text-link {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+      padding-bottom: 4px;
+      transition: 0.25s ease;
+    }
+
+    .cta-text-link:hover {
+      color: var(--blue-dark);
+      border-color: var(--blue-dark);
+    }
+
+    .cta-info-card {
+      padding: 28px 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 60px rgba(0, 47, 99, 0.2);
+    }
+
+    .cta-card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: #fff;
+      color: var(--orange);
+    }
+
+    .cta-card-icon .material-symbols-outlined {
+      font-size: 34px;
+    }
+
+    .cta-info-card h3 {
+      font-size: 22px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .cta-info-card p {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .cta-info-card ul {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-info-card li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      list-style: none;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cta-info-card li span {
+      color: #fff;
+      font-weight: 900;
+    }
+
+    @media (max-width: 900px) {
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-info-card {
+        max-width: 520px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cta {
+        padding: 56px 0;
+      }
+
+      .cta h2 {
+        font-size: clamp(32px, 10vw, 44px);
+      }
+
+      .cta-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
 
     /* Footer */
@@ -1373,13 +1546,43 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta cta-enhanced">
     <div class="container cta-inner">
-      <div>
+      <div class="cta-content">
+        <div class="cta-label">
+          <span class="material-symbols-outlined">workspace_premium</span>
+          Admissions Guidance
+        </div>
+
         <h2>Your hospitality career starts here.</h2>
-        <p>Apply now or talk to our admissions team for clear guidance.</p>
+        <p>
+          Apply now or talk to our admissions team for clear guidance on programs,
+          eligibility, facilities, and career pathways at FAB School.
+        </p>
+
+        <div class="cta-actions">
+          <a class="btn cta-main-btn" href="/contact">
+            Talk to Admissions
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
       </div>
-      <a class="btn" href="/contact">Talk to Admissions</a>
+
+      <div class="cta-info-card">
+        <div class="cta-card-icon">
+          <span class="material-symbols-outlined">assignment</span>
+        </div>
+        <h3>Start with the right support</h3>
+        <p>
+          Get personal guidance before choosing your hospitality program.
+        </p>
+
+        <ul>
+          <li><span>✓</span> Application support</li>
+          <li><span>✓</span> Program counseling</li>
+          <li><span>✓</span> Career pathway guidance</li>
+        </ul>
+      </div>
     </div>
   </section>
 
