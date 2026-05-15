@@ -1062,12 +1062,31 @@
       }
 
       .nav-links a {
+        position: relative;
         transition: 0.25s ease;
+        padding-bottom: 6px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--orange);
+        border-radius: 999px;
+        transition: width 0.25s ease;
       }
 
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--orange);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
       }
     }
   </style>

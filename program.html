@@ -798,12 +798,31 @@
       }
 
       .nav-links a {
+        position: relative;
         transition: 0.25s ease;
+        padding-bottom: 6px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--orange);
+        border-radius: 999px;
+        transition: width 0.25s ease;
       }
 
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--orange);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
       }
     }
   </style>
@@ -883,7 +902,7 @@
             <li>Hospitality leadership focus</li>
             <li>Career pathway in Nepal and abroad</li>
           </ul>
-          <a class="learn" href="#bph">Learn More &gt;</a>
+          <!-- <a class="learn" href="#bph">Learn More &gt;</a> -->
         </article>
 
         <article class="summary-card">
@@ -900,7 +919,7 @@
             <li>Practical learning environment</li>
             <li>Skill-based hospitality exposure</li>
           </ul>
-          <a class="learn" href="#tafe">Learn More &gt;</a>
+          <!-- <a class="learn" href="#tafe">Learn More &gt;</a> -->
         </article>
 
         <article class="summary-card">
@@ -917,7 +936,7 @@
             <li>Hands-on skill practice</li>
             <li>Industry-ready training outcomes</li>
           </ul>
-          <a class="learn" href="#vocational">Learn More &gt;</a>
+          <!-- <a class="learn" href="#vocational">Learn More &gt;</a> -->
         </article>
       </div>
     </div>
@@ -971,7 +990,7 @@
           <li><span>✓</span> Career readiness and placement support</li>
         </ul>
 
-        <a class="btn blue-btn" href="#admissions">Apply for BPH</a>
+        <a class="btn blue-btn" href="/admissions">Apply for BPH</a>
       </div>
     </div>
   </section>
@@ -1057,7 +1076,7 @@
           <li><span>✓</span> Skill-based learning outcomes</li>
         </ul>
 
-        <a class="btn blue-btn" href="#admissions">Ask About TAFE NSW</a>
+        <a class="btn blue-btn" href="/admissions">Apply for TAFE NSW</a>
       </div>
 
       <div class="program-image-card">
@@ -1156,7 +1175,7 @@
         <h2>Ready to start your hospitality journey?</h2>
         <p>Talk to our admissions team and choose the program that fits your goals.</p>
       </div>
-      <a class="btn" href="#contact">Contact Admissions</a>
+      <a class="btn" href="/contact">Contact Admissions</a>
     </div>
   </section>
 
